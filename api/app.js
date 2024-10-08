@@ -46,10 +46,10 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const blogRoutes = require('./Routes/route');
+const blogRoutes = require('../Routes/route');
 const cors = require('cors');
 const path = require("path");
-const contactRoutes = require('./Routes/contact-route'); 
+const contactRoutes = require('../Routes/contact-route'); 
 const dotenv = require("dotenv");
 const multer = require('multer'); // Import multer
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
