@@ -61,7 +61,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json()); 
 
 // MongoDB connection
@@ -85,6 +90,7 @@ const storage = new CloudinaryStorage({
 });
 
 const upload = multer({ storage });
+
 
 // Route for file uploads
 app.post('/upload', upload.single('image'), (req, res) => {
